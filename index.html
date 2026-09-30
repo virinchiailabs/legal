@@ -2,411 +2,77 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Watch It India</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500;600&display=swap">
 <style>
-  :root {
-    --bg:       #fafaf8;
-    --bg-card:  #f3f2ee;
-    --fg:       #1a1a18;
-    --fg-muted: #5a5a52;
-    --border:   #d8d6ce;
-    --accent:   #1a3a5c;
-    --accent-s: #e8edf3;
-    color-scheme: light;
-  }
+  :root { --bg:#fafaf8; --fg:#1a1a18; --muted:#5a5a52; --border:#d8d6ce; }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg:       #111210;
-      --bg-card:  #1c1d1a;
-      --fg:       #ede9e0;
-      --fg-muted: #8a8a7e;
-      --border:   #2e2e28;
-      --accent:   #7aafd4;
-      --accent-s: #151e27;
-      color-scheme: dark;
-    }
+    :root { --bg:#111210; --fg:#ede9e0; --muted:#8a8a7e; --border:#2e2e28; color-scheme:dark; }
   }
-  :root[data-theme="dark"] {
-    --bg:       #111210;
-    --bg-card:  #1c1d1a;
-    --fg:       #ede9e0;
-    --fg-muted: #8a8a7e;
-    --border:   #2e2e28;
-    --accent:   #7aafd4;
-    --accent-s: #151e27;
-    color-scheme: dark;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-    padding-inline: 20px;
-    padding-block: 48px;
-  }
-
-  .wrap {
-    max-width: 720px;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  /* Header */
-  .header {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .wordmark {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--fg-muted);
-  }
-  h1 {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-size: clamp(28px, 5vw, 40px);
-    font-weight: 400;
-    line-height: 1.2;
-    text-wrap: balance;
-    color: var(--fg);
-  }
-  .meta {
-    font-size: 13px;
-    color: var(--fg-muted);
-    margin-top: 4px;
-  }
-
-  /* Sections */
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  h2 {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--border);
-  }
-  h3 {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--fg);
-    margin-top: 4px;
-  }
-  p {
-    color: var(--fg);
-    max-width: 65ch;
-  }
-  ul, ol {
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    max-width: 65ch;
-  }
-  li { color: var(--fg); }
-  li::marker { color: var(--fg-muted); }
-
-  /* Data table */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13.5px;
-    overflow-x: auto;
-    display: block;
-  }
-  .data-table th {
-    text-align: left;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--fg-muted);
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--border);
-    white-space: nowrap;
-  }
-  .data-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-  .data-table tr:last-child td { border-bottom: none; }
-  .data-table tbody tr:hover { background: var(--bg-card); }
-
-  /* Third-party card */
-  .tp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px;
-  }
-  .tp-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 14px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .tp-name {
-    font-weight: 600;
-    font-size: 13.5px;
-    color: var(--fg);
-  }
-  .tp-role {
-    font-size: 12.5px;
-    color: var(--fg-muted);
-  }
-
-  /* Highlight box */
-  .note {
-    background: var(--accent-s);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 4px 4px 0;
-    padding: 14px 16px;
-    font-size: 14px;
-    color: var(--fg);
-    max-width: 65ch;
-  }
-
-  /* Contact */
-  .contact-block {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 20px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .contact-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--fg-muted);
-  }
-  .contact-value {
-    font-size: 15px;
-    color: var(--accent);
-    word-break: break-all;
-  }
-
-  /* Footer */
-  footer {
-    border-top: 1px solid var(--border);
-    padding-top: 24px;
-    font-size: 12.5px;
-    color: var(--fg-muted);
-  }
-
-  @media (max-width: 480px) {
-    body { padding-inline: 16px; padding-block: 32px; }
-    .tp-grid { grid-template-columns: 1fr 1fr; }
-  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--fg); font-family:system-ui,sans-serif; font-size:15px; line-height:1.7; padding:48px 20px; }
+  .wrap { max-width:640px; margin:auto; display:flex; flex-direction:column; gap:32px; }
+  h1 { font-size:26px; font-weight:600; }
+  h2 { font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--border); padding-bottom:6px; }
+  p, li { color:var(--fg); max-width:60ch; }
+  ul { padding-left:18px; display:flex; flex-direction:column; gap:4px; }
+  .meta { font-size:13px; color:var(--muted); }
+  footer { font-size:12px; color:var(--muted); border-top:1px solid var(--border); padding-top:20px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-
-  <header class="header">
-    <span class="wordmark">Watch It India</span>
+  <div>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: 1 October 2026 &nbsp;·&nbsp; Last updated: 1 October 2026</p>
-  </header>
+    <p class="meta">Watch It India &nbsp;·&nbsp; Effective: 1 October 2026</p>
+  </div>
 
-  <section>
-    <h2>Overview</h2>
-    <p>Watch It India is an Android application for Indian vintage watch collectors. This policy explains what data we collect, why we collect it, how it is stored, and your rights over it.</p>
-    <p>We do not sell your personal data. We do not use your data for advertising profiling.</p>
-  </section>
-
-  <section>
+  <section style="display:flex;flex-direction:column;gap:10px;">
     <h2>Data We Collect</h2>
-    <div style="overflow-x:auto;">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Data</th>
-            <th>Why collected</th>
-            <th>Where stored</th>
-            <th>Optional?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Phone number or email address</td>
-            <td>Account authentication via OTP</td>
-            <td>Supabase Auth (encrypted)</td>
-            <td>Required</td>
-          </tr>
-          <tr>
-            <td>Watch scan images (front + back)</td>
-            <td>AI identification — images sent to Google Gemini, then stored in your collection</td>
-            <td>Supabase Storage</td>
-            <td>Required per scan</td>
-          </tr>
-          <tr>
-            <td>Collection records (model, serial, notes)</td>
-            <td>Your personal watch collection</td>
-            <td>Supabase Database</td>
-            <td>Required per save</td>
-          </tr>
-          <tr>
-            <td>Purchase price and date</td>
-            <td>Cost-per-wear analytics</td>
-            <td>Supabase Database</td>
-            <td>Optional</td>
-          </tr>
-          <tr>
-            <td>Wear log dates</td>
-            <td>Wrist-time tracking and cost-per-wear</td>
-            <td>Supabase Database</td>
-            <td>Optional</td>
-          </tr>
-          <tr>
-            <td>Service history entries</td>
-            <td>Watch service record keeping</td>
-            <td>Supabase Database</td>
-            <td>Optional</td>
-          </tr>
-          <tr>
-            <td>Crash reports and device diagnostics</td>
-            <td>Identifying and fixing app crashes</td>
-            <td>Firebase Crashlytics (Google)</td>
-            <td>Automatic</td>
-          </tr>
-          <tr>
-            <td>Subscription and purchase status</td>
-            <td>Collector's Pass verification</td>
-            <td>RevenueCat</td>
-            <td>Only if subscribing</td>
-          </tr>
-          <tr>
-            <td>Marketplace listing content</td>
-            <td>Peer-to-peer listings visible to other users</td>
-            <td>Supabase Database</td>
-            <td>Optional</td>
-          </tr>
-          <tr>
-            <td>Discussion posts and votes</td>
-            <td>Reference discussions on watch models</td>
-            <td>Supabase Database</td>
-            <td>Optional</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section>
-    <h2>AI Processing</h2>
-    <p>When you use the scan feature, the front and back images of your watch are sent to <strong>Google Gemini</strong> (Google LLC) for AI-based identification. Google processes these images to return structured watch data. Images are transmitted over encrypted HTTPS connections.</p>
-    <p>Google's data processing is governed by Google's Privacy Policy and the Google Cloud Data Processing Addendum. We do not instruct Google to use your images for model training beyond what is described in their standard terms.</p>
-  </section>
-
-  <section>
-    <h2>Third-Party Services</h2>
-    <div class="tp-grid">
-      <div class="tp-card">
-        <span class="tp-name">Supabase</span>
-        <span class="tp-role">Authentication, database, and file storage. Servers in the AWS ap-south-1 (Mumbai) region.</span>
-      </div>
-      <div class="tp-card">
-        <span class="tp-name">Google Gemini</span>
-        <span class="tp-role">AI watch identification. Watch images are sent to Google's API per scan.</span>
-      </div>
-      <div class="tp-card">
-        <span class="tp-name">Firebase Crashlytics</span>
-        <span class="tp-role">Crash reporting and stability diagnostics. Collects device model, OS version, and app state at time of crash.</span>
-      </div>
-      <div class="tp-card">
-        <span class="tp-name">RevenueCat</span>
-        <span class="tp-role">Subscription management for Collector's Pass. Processes in-app purchase receipts from Google Play.</span>
-      </div>
-      <div class="tp-card">
-        <span class="tp-name">Google Play</span>
-        <span class="tp-role">App distribution. Subject to Google's own privacy terms.</span>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Data Sharing</h2>
-    <p>We share your data only with the third-party processors listed above, and only to the extent necessary to provide the features of the app. We do not sell, rent, or trade your personal data to any other party.</p>
-    <p>We may disclose data if required to do so by applicable Indian law, a court order, or a government authority.</p>
-    <p>Marketplace listings and public showcase items you mark as public are visible to other registered users of the app.</p>
-  </section>
-
-  <section>
-    <h2>Data Retention</h2>
     <ul>
-      <li>Your account and collection data is retained as long as your account is active.</li>
-      <li>If you delete your account, your personal data and collection records are deleted within 30 days.</li>
-      <li>Crash logs in Firebase Crashlytics are retained for 90 days.</li>
-      <li>Watch images you delete from your collection are removed from Supabase Storage.</li>
+      <li>Phone number or email address — for account authentication</li>
+      <li>Images uploaded by you — stored securely in your account</li>
+      <li>User-entered records — stored in your private account</li>
+      <li>Crash diagnostics — device model, OS version, app state at crash</li>
+      <li>Subscription status — if you make an in-app purchase</li>
     </ul>
   </section>
 
-  <section>
+  <section style="display:flex;flex-direction:column;gap:10px;">
+    <h2>Third-Party Services</h2>
+    <ul>
+      <li>Supabase — authentication, database, and file storage</li>
+      <li>Google Gemini — AI processing of uploaded images</li>
+      <li>Firebase Crashlytics — crash reporting</li>
+      <li>RevenueCat — subscription management</li>
+    </ul>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:10px;">
+    <h2>Data Sharing</h2>
+    <p>We do not sell your data. Data is shared only with the processors above to operate the service.</p>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:10px;">
     <h2>Your Rights</h2>
     <ul>
-      <li><strong>Access:</strong> You can view all your collection data within the app at any time.</li>
-      <li><strong>Deletion:</strong> You can delete individual collection items, or delete your entire account and all associated data via the app settings.</li>
-      <li><strong>Portability:</strong> You may request an export of your collection data by contacting us.</li>
-      <li><strong>Correction:</strong> You can edit your collection records directly in the app.</li>
+      <li>Access and edit your data within the app</li>
+      <li>Delete your account and all associated data at any time</li>
+      <li>Request a data export by contacting us</li>
     </ul>
   </section>
 
-  <section>
+  <section style="display:flex;flex-direction:column;gap:10px;">
     <h2>Children</h2>
-    <div class="note">Watch It India is not directed at children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe a child has provided us with personal data, please contact us and we will delete it.</div>
+    <p>This app is not directed at children under 13. We do not knowingly collect data from children under 13.</p>
   </section>
 
-  <section>
-    <h2>Security</h2>
-    <p>All data is transmitted over HTTPS (TLS 1.2+). Your collection is protected by Row-Level Security policies — only you can read or write your own records. Authentication uses OTP-based verification with no stored passwords.</p>
-  </section>
-
-  <section>
-    <h2>Changes to This Policy</h2>
-    <p>We may update this policy from time to time. When we make material changes, we will update the effective date at the top of this page. We encourage you to review this page periodically.</p>
-  </section>
-
-  <section>
+  <section style="display:flex;flex-direction:column;gap:10px;">
     <h2>Contact</h2>
-    <div class="contact-block">
-      <span class="contact-label">Privacy enquiries</span>
-      <span class="contact-value"><!-- REPLACE: company email address e.g. privacy@watchitindia.in --></span>
-      <span class="contact-label" style="margin-top:8px;">Company</span>
-      <span class="tp-role"><!-- REPLACE: OPC registered name and CIN once available --></span>
-    </div>
-    <p style="font-size:13px; color:var(--fg-muted); margin-top:4px;">Placeholders above must be filled before submitting to Play Store.</p>
+    <p><!-- REPLACE: privacy@watchitindia.in --></p>
   </section>
 
-  <footer>
-    <p>© 2026 Watch It India. All rights reserved.</p>
-  </footer>
-
+  <footer>© 2026 Watch It India. All rights reserved.</footer>
 </div>
 </body>
 </html>
